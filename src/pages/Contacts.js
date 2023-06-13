@@ -11,32 +11,42 @@ import ContactList from 'components/ContactList/ContactList';
 import { fetchContacts } from 'redux/operations';
 // 
 // import { selectLoading } from 'redux/tasks/selectors'; // удалить
-import { getIsLoading } from 'redux/selectors';
+import { getError, getIsLoading } from 'redux/selectors';
+
+////
+import Form from 'components/Form/Form';
+import Loader from 'components/Loader/Loader';
+import Filter from 'components/Filter/Filter';
 
 export default function Tasks() {
     const dispatch = useDispatch();
     // const isLoading = useSelector(selectLoading); //удалить
     const isLoading = useSelector(getIsLoading);
+    const error = useSelector(getError);
 
     useEffect(() => {
         dispatch(fetchContacts());
     }, [dispatch]);
 
     return (
-        <>
+        <div className="wrapper">
             <Helmet>
-                <title>Your contacts</title>
+                <title>Your Phonebook</title>
             </Helmet>
             
             {/* <TaskEditor /> */} 
-            {/* заменить на свой ContactEditor */}
+            <Form/>
 
-            <div>{isLoading && 'Request in progress...'}</div>
+            <h2>Contacts</h2>
 
-            {/*  <TaskList />  УДАЛИТЬ */}
+            {/* <div>{isLoading && 'Request in progress...'}</div> */}
+
+            <Filter />
+
             {/* <TaskList /> */}
             <ContactList />
-            {/*  */}
-        </>
+
+            {isLoading && !error && <Loader />} 
+        </div>
     );
 };
