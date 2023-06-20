@@ -15,9 +15,9 @@ const ContactList = () => {
     const filteredContacts = filteredContactsArray(contacts, filter);
 
     return (
-        <ul className={css.list}>
+        <ul>
             {filteredContacts.map(contact => (
-                <li key={contact.id} className={css.item}>
+                <li key={contact.id}>
                     <ContactListItem contact={contact} />
                 </li>
             ))               

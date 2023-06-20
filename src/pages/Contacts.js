@@ -20,7 +20,6 @@ import Filter from 'components/Filter/Filter';
 
 export default function Tasks() {
     const dispatch = useDispatch();
-    // const isLoading = useSelector(selectLoading); //удалить
     const isLoading = useSelector(getIsLoading);
     const error = useSelector(getError);
 
@@ -34,16 +33,12 @@ export default function Tasks() {
                 <title>Your Phonebook</title>
             </Helmet>
             
-            {/* <TaskEditor /> */} 
             <Form/>
 
             <h2>Contacts</h2>
 
-            {/* <div>{isLoading && 'Request in progress...'}</div> */}
-
             <Filter />
 
-            {/* <TaskList /> */}
             <ContactList />
 
             {isLoading && !error && <Loader />} 

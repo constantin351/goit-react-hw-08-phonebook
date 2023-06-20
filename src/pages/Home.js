@@ -1,26 +1,28 @@
-const styles = {
-    container: {
-      minHeight: 'calc(100vh - 50px)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    title: {
-      fontWeight: 500,
-      fontSize: 48,
-      textAlign: 'center',
-    },
-  };
+import styled from "@emotion/styled";
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 50px);
+`
+
+const Title = styled.h1`
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  text-align: center;
+`
   
   export default function Home() {
     return (
-      <div style={styles.container}>
-        <h1 style={styles.title}>
-          Welcome to phonebook manager{' '}
+      <Wrapper>
+        <Title>
+          Welcome to your phonebook manager{' '}
           <span role="img" aria-label="Greeting icon">
             💁‍♀️
           </span>
-        </h1>
-      </div>
+        </Title>
+      </Wrapper>
     );
-  }
+  };
