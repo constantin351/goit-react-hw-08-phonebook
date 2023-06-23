@@ -1,9 +1,15 @@
 import { RotatingLines } from 'react-loader-spinner';
-import css from "./Loader.module.css";
+import styled from '@emotion/styled';
+
+const LoaderWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
 
 function Loader() {
     return (
-        <div className={css.Loader_wrapper}>
+        <LoaderWrapper>
             <RotatingLines
               strokeColor="grey"
               strokeWidth="5"
@@ -11,7 +17,7 @@ function Loader() {
               width="96"
               visible={true}
             />
-        </div>
+        </LoaderWrapper>
     )
 };
 

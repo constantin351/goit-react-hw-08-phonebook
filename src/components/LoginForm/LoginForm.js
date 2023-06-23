@@ -1,7 +1,5 @@
 import { useDispatch } from "react-redux";
 import { logIn } from "redux/auth/operations";
-import css from "./LoginForm.module.css";
-//
 import styled from '@emotion/styled';
 
 const Wrapper = styled.div`
@@ -78,12 +76,12 @@ export const LoginForm = () => {
 
   return (
     <Wrapper>
-        <Form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-          <Label className={css.label}>
+        <Form onSubmit={handleSubmit} autoComplete="off">
+          <Label>
             Email
             <Input type="email" name="email" />
           </Label>
-          <Label className={css.label}>
+          <Label>
             Password
             <Input type="password" name="password" />
           </Label>

@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
-import css from './ContactListItem.module.css';
 import { useDispatch } from "react-redux";
-import { deleteContact } from "redux/operations";
+import { deleteContact } from "redux/contacts/operations";
 import styled from '@emotion/styled';
 
 const Wrapper = styled.div`
@@ -15,6 +14,14 @@ const Wrapper = styled.div`
   border-bottom: 1px dashed black;
   padding: 10px 0;
 `;
+
+const Name = styled.p`
+  margin-right: 10px;
+`
+
+const Number = styled.p`
+  margin-right: 10px;
+`
 
 const DeleteBtn = styled.button`
   width: 100px;
@@ -46,8 +53,8 @@ const ContactListItem = ({ contact }) => {
 
   return (
       <Wrapper>
-          <p className={css.item__name}>{contact.name}: </p>
-          <p className={css.item__number}>{contact.number}</p>
+          <Name>{contact.name}: </Name>
+          <Number>{contact.number}</Number>
           <DeleteBtn
             //   className={css.item__btn}
               type="button"

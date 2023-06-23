@@ -11,9 +11,7 @@ const Nav = styled.nav`
   gap: 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0 auto;
-`
-//
-// import { Button, Box, Link} from "@mui/material";
+`;
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();

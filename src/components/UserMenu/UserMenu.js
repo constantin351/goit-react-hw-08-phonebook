@@ -1,14 +1,9 @@
 import { useDispatch } from "react-redux";
 import { logOut } from "redux/auth/operations";
 import { useAuth } from "hooks";
-// import css from "./UserMenu.module.css"
-// import { Box, Button, Typography } from "@mui/material";
-
-// import { AiOutlineUser } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
-import {FiLogOut} from "react-icons/fi"
+import {FiLogOut} from "react-icons/fi";
 import styled from "@emotion/styled";
-
 
 const Wrapper = styled.div`
   display: flex;
@@ -49,6 +44,7 @@ const Button = styled.button`
     background-color: green;
   }
 `;
+
 
 export const UserMenu = () => {
   const dispatch = useDispatch();

@@ -1,8 +1,5 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
-// import css from './RegisterForm.module.css';
-//
-// import { Box, Button, FormGroup, Input, TextField } from '@mui/material';
 import styled from '@emotion/styled';
 
 const Wrapper = styled.div`
@@ -42,7 +39,7 @@ const Input = styled.input`
     background-color: #F3F3F3;
     box-shadow: 1px 1px 6px 2px rgba(12, 0, 0, 0.37);
   }
-`
+`;
 
 const Button = styled.button`
   width: 100%;
@@ -61,7 +58,7 @@ const Button = styled.button`
     background-color: green;
     box-shadow: 1px 1px 6px 2px rgba(12, 0, 0, 0.37);
   }
-`
+`;
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -100,60 +97,3 @@ export const RegisterForm = () => {
     </Wrapper>
   );
 };
-
-
-// <Box
-//       component="form"
-//       sx={{
-//         '& .MuiTextField-root': { m: 2, width: '25ch' },
-//       }}
-//       noValidate
-//       autoComplete="off"
-      
-//     >
-
-
-
-
-//       {/* <Box> */}
-// <form autoComplete="off">
-
-// <FormGroup>
-//       <TextField
-//         required
-//         // id="outlined-required"
-//         type="text"
-//         name="name"
-//         label="Username"
-//         placeholder="Enter Username"
-//         // defaultValue="Hello World"
-//       />
-
-//       <TextField
-//         required
-//         // id="outlined-required"
-//         type="email"
-//         name="email"
-//         label="Email"
-//         placeholder="Enter Email"
-//         // defaultValue="Hello World"
-//       />
-
-//       <TextField
-//         required
-//         // id="outlined-required"
-//         type="password"
-//         label="Password"
-//         name="password"
-//         placeholder="Enter Password"
-//         // defaultValue="Hello World"
-//       />
-
-//       <Button type="submit" variant="contained" color="primary" fullWidth onClick={handleSubmit}>
-//         Register
-//       </Button>
-//   </FormGroup>
-//       </form>
-    
-
-//     </Box>

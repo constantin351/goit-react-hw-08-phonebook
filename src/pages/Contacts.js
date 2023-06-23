@@ -1,24 +1,29 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
-//
-// import { TaskList } from 'components/TaskList/TaskList';
-import ContactList from 'components/ContactList/ContactList';
-//
-// import { TaskEditor } from 'components/TaskEditor/TaskEditor'; // заменить на свой ContactEditor
-// 
-// import { fetchTasks } from 'redux/tasks/operations'; //удалить
-import { fetchContacts } from 'redux/operations';
-// 
-// import { selectLoading } from 'redux/tasks/selectors'; // удалить
-import { getError, getIsLoading } from 'redux/selectors';
+import { fetchContacts } from 'redux/contacts/operations';
+import { getError, getIsLoading } from 'redux/contacts/selectors';
+import styled from '@emotion/styled';
 
-////
+import ContactList from 'components/ContactList/ContactList';
 import Form from 'components/Form/Form';
 import Loader from 'components/Loader/Loader';
 import Filter from 'components/Filter/Filter';
 
-export default function Tasks() {
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Title = styled.h2`
+    font-size: 26px;
+    font-family: 'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    font-weight: 700;
+    text-align: center;
+`;
+
+export default function Contacts() {
     const dispatch = useDispatch();
     const isLoading = useSelector(getIsLoading);
     const error = useSelector(getError);
@@ -28,20 +33,20 @@ export default function Tasks() {
     }, [dispatch]);
 
     return (
-        <div className="wrapper">
+        <Wrapper>
             <Helmet>
                 <title>Your Phonebook</title>
             </Helmet>
             
             <Form/>
 
-            <h2>Contacts</h2>
+            <Title>Contacts:</Title>
 
             <Filter />
 
             <ContactList />
 
             {isLoading && !error && <Loader />} 
-        </div>
+        </Wrapper>
     );
 };
